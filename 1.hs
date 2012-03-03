@@ -1,2 +1,5 @@
 main :: IO ()
-main = print $ sum [ x | x <- [1..999], x `mod` 3 == 0 || x `mod` 5 == 0 ]
+main = print $ sum [ x | x <- [1..999], any (divisible_by x) [3, 5] ]
+
+divisible_by :: Int -> Int -> Bool
+divisible_by a b = a `mod` b == 0
