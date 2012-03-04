@@ -5,5 +5,5 @@ fibonacci :: [Int]
 fibonacci = [1, 1] ++ fib 1 1
 
 fib :: Int -> Int -> [Int]
-fib x y = [next] ++ fib y next
-        where next = x + y
+fib prev cur = [next] ++ fib cur next
+        where next = prev + cur
